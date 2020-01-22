@@ -37,7 +37,6 @@ def select_series_title_with_most_human_characters
   JOIN books ON books.id = series.book_id
   JOIN character_books ON series.book_id = books.id
   HAVING characters.species = 'human'
-  ORDER BY COUNT(characters.species)
   GROUP BY characters.species DESC
   LIMIT 1
   ;"
