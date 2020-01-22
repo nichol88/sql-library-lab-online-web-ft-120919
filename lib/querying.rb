@@ -35,7 +35,7 @@ def select_series_title_with_most_human_characters
   "SELECT series.title
   FROM series
   LEFT JOIN books ON books.id = series.book_id
-  LEFT JOIN character_books ON series.book_id = books.id
+  LEFT JOIN subgenre ON series.book_id = books.id
   LEFT JOIN characters ON characters.id = character_books.character_id
   WHERE characters.species = 'human'
   GROUP BY characters.species
